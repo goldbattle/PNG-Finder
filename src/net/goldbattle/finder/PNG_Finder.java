@@ -3,8 +3,6 @@ package net.goldbattle.finder;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.Toolkit;
-import java.net.URL;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -40,12 +38,6 @@ public class PNG_Finder {
 		frame.setTitle("PNG Finder");
 
 		// TODO: Icon loading
-		try {
-			URL url = getClass().getClassLoader().getResource("");
-			frame.setIconImage(Toolkit.getDefaultToolkit().createImage(url));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
 	//creates and adds to
@@ -123,7 +115,7 @@ public class PNG_Finder {
 		//compare 2 button
 		gbc.gridy = 5;
 		compareButton = new JButton("Compare File 2 to File 1");
-		//compareButton.addActionListener(new Listeners.WizardListener(this));
+		compareButton.addActionListener(new CompareListener.Compare2Listener());
 		frame.add(compareButton, gbc);
 	}
 
